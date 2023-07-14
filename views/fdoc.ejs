@@ -1,0 +1,25 @@
+<form action="frontscript.js" id="dregister" autocomplete="on" method="post" >
+    <h2>Registro de Doctores</h2><br>
+    <label for="nombre1" class="labelz">nombre</label>
+    <input type="text" id="nombre1" value="nombre"> <br>
+    <label for="apellido" class="labelz">apellido</label> 
+    <input type="text" id="apellido1" value="apellido"> <br>
+    <label for="consultorio" class="labelz">Consultorio</label>
+    <input type="text" id="consultorio" value="consultorio"> <br>
+    <label for="cedula" class="labelz">cedula</label>
+    <input type="text" id="cedula" value="cedula"> <br>
+    <label for="Especialidad" class="labelz">Especialidad</label>
+    <input list="Especialidad">
+    <datalist id="Especialidad" defaultValue="Especialidad">
+        <option value="Medicina General">
+        <option value="Cardiología">
+        <option value="Medicina Interna">
+        <option value="Dermatología">
+        <option value="Rehabilitación Física">
+        <option value="psicología">
+        <option value="Odontología">
+        <option value="Radiología">
+    </datalist>
+    <br>
+    <input type="submit" class="submitformbutton" value="Entrar">
+</form>

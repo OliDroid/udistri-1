@@ -1,13 +1,34 @@
-<form action="frontscript.js" id="dregister" autocomplete="on" method="post" >
-    <h2>Registro de Doctores</h2><br>
-    <label for="nombre1" class="labelz">nombre</label>
-    <input type="text" id="nombre1" value="nombre"> <br>
-    <label for="apellido" class="labelz">apellido</label> 
-    <input type="text" id="apellido1" value="apellido"> <br>
-    <label for="consultorio" class="labelz">Consultorio</label>
-    <input type="text" id="consultorio" value="consultorio"> <br>
-    <label for="cedula" class="labelz">cedula</label>
-    <input type="text" id="cedula" value="cedula"> <br>
+<form action="/doctor" method="post" class="form-horizontal">
+    <div class="form-group">
+      <label for="cedula" class="col-sm-2 control-label">Cedula</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="cedula" name="cedula" placeholder="Cedula">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="nombre" class="col-sm-2 control-label">Nombre</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="apellido" class="col-sm-2 control-label">Apellido</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="consultorio" class="col-sm-2 control-label">Consultorio</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="consultorio" name="consultorio" placeholder="Consultorio">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email" class="col-sm-2 control-label">Email</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+      </div>
+    </div>
     <label for="Especialidad" class="labelz">Especialidad</label>
     <input list="Especialidad">
     <datalist id="Especialidad" defaultValue="Especialidad">
@@ -22,4 +43,7 @@
     </datalist>
     <br>
     <input type="submit" class="submitformbutton" value="Entrar">
+</form>
+<form action="/doctor/lista" method="get">
+    <input type="submit" class="btn btn-primary" value="ver">
 </form>

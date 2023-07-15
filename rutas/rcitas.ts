@@ -4,7 +4,12 @@ import { Cita } from '../modelos/cita';
 
 const rcita = express.Router();
 
+
 rcita.get('/', async (req: Request, res: Response) => {
+	res.render("index.ejs",{form: "fcita" });
+});
+
+rcita.get('/lista', async (req: Request, res: Response) => {
 	ccita.findAll((err: Error, citas: Cita[]) => {
 		if (err) {
 			return res.status(500).json({ 'errorMessage': err.message });

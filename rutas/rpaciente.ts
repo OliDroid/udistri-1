@@ -6,6 +6,10 @@ import { Paciente } from '../modelos/paciente';
 const rpaciente = express.Router();
 
 rpaciente.get('/', async (req: Request, res: Response) => {
+	res.render("index.ejs",{form: "fpac" });
+});
+
+rpaciente.get('/lista', async (req: Request, res: Response) => {
 	cpaciente.findAll((err: Error, pacientes: Paciente[]) => {
 		if (err) {
 			return res.status(500).json({ 'errorMessage': err.message });

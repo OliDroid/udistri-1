@@ -5,6 +5,10 @@ import { Doctor } from '../modelos/doctor';
 const rdoctor = express.Router();
 
 rdoctor.get('/', async (req: Request, res: Response) => {
+	res.render("index.ejs",{form: "fdoc" });
+});
+
+rdoctor.get('/lista', async (req: Request, res: Response) => {
 	cdoctor.findAll((err: Error, doctores: Doctor[]) => {
 		if (err) {
 			return res.status(500).json({ 'errorMessage': err.message });
@@ -16,12 +20,13 @@ rdoctor.get('/', async (req: Request, res: Response) => {
 
 rdoctor.post('/', async (req: Request, res: Response) => {
 	const ndoctor: Doctor = req.body;
-	cdoctor.crear(ndoctor, (err: Error, doctorId: number) => {
+	console.log(req.body)
+	cdoctor.crear(ndoctor, (err: Error, doctor: Doctor) => {
 		if (err) {
 			return res.status(500).json({ 'message': err.message });
 		}
 
-		res.status(200).json({ 'doctor': doctorId });
+		res.status(200).send(`el doctor con cedula${req.body.cedula} ha sido creado`);
 	});
 });
 

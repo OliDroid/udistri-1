@@ -31,8 +31,8 @@ rcita.post('/', async (req: Request, res: Response) => {
 });
 
 rcita.get('/:id', async (req: Request, res: Response) => {
-	const paciente = Number(req.params.id);
-	ccita.findOne(paciente, (err: Error, citas: Cita[]) => {
+	const cid = Number(req.params.id);
+	ccita.findOne(cid, (err: Error, citas: Cita[]) => {
 		if (err) {
 			return res.status(500).json({ 'message': err.message });
 		}

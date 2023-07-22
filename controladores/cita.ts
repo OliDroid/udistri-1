@@ -18,11 +18,11 @@ export const crear = (cita: Cita, callback: Function) => {
 	);
 };
 
-export const findOne = (paciente: number, callback: Function) => {
+export const findOne = (id: number, callback: Function) => {
 
-	const consulta = `SELECT * FROM cita WHERE paciente=?`;
+	const consulta = `SELECT * FROM cita WHERE id=?`;
 
-	db.query(consulta, [paciente], (err, result) => {
+	db.query(consulta, [id], (err, result) => {
 		if (err) { callback(err); }
 
 		const rows = (<RowDataPacket[]>result);

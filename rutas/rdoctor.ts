@@ -26,7 +26,7 @@ rdoctor.post('/', async (req: Request, res: Response) => {
 			return res.status(500).json({ 'message': err.message });
 		}
 
-		res.status(200).render("return.ejs", {cuerpo: "doc"});
+		res.status(200).send(`el doctor con cedula${req.body.cedula} ha sido creado`);
 	});
 });
 

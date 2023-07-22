@@ -1,43 +1,100 @@
 <h2>Registro de pacientes</h2><br>
 <form action="/paciente" method="post" class="form-horizontal">
-    <div class="form-group">
-      <label for="cedula" class="col-sm-2 control-label">Cedula</label>
-      <div class="col-sm-10">
-        <input type="number" class="form-control" id="cedula" name="cedula" placeholder="Cedula">
-      </div>
+  <div class="form-group">
+    <label for="cedula" class="col-sm-2 control-label">Cedula</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="cedula" name="cedula" placeholder="Cedula">
     </div>
-    <div class="form-group">
-      <label for="nombre" class="col-sm-2 control-label">Nombre</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
-      </div>
+  </div>
+  <div class="form-group">
+    <label for="nombre" class="col-sm-2 control-label">Nombre</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
     </div>
-    <div class="form-group">
-      <label for="apellido" class="col-sm-2 control-label">Apellido</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
-      </div>
+  </div>
+  <div class="form-group">
+    <label for="apellido" class="col-sm-2 control-label">Apellido</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
     </div>
-    <div class="form-group">
-      <label for="edad" class="col-sm-2 control-label">Edad</label>
-      <div class="col-sm-10">
-        <input type="number" class="form-control" id="edad" name="edad" placeholder="Edad">
-      </div>
+  </div>
+  <div class="form-group">
+    <label for="edad" class="col-sm-2 control-label">Edad</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="edad" name="edad" placeholder="Edad">
     </div>
-    <div class="form-group">
-      <label for="telefono" class="col-sm-2 control-label">Telefono</label>
-      <div class="col-sm-10">
-        <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
-      </div>
+  </div>
+  <div class="form-group">
+    <label for="telefono" class="col-sm-2 control-label">Telefono</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
     </div>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <input type="submit" value="Crear Paciente" class="btn btn-primary">
-      </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Crear Paciente" class="btn btn-primary">
     </div>
-  </form>
-<br>
-<form action="/paciente/lista" method="get">
-    <input type="submit" class="btn btn-primary" value="ver">
+  </div>
 </form>
-    <br>
+<br>
+
+<form action="/paciente/lista" method="put">
+  <input type="submit" class="btn btn-primary" value="Lista de pacientes">
+</form>
+<br>
+
+<form action="/paciente" method="post" class="form-horizontal">
+  <div class="form-group">
+    <label for="cedula" class="col-sm-2 control-label">Cedula</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="cedula" name="cedula" placeholder="Cedula">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="nombre" class="col-sm-2 control-label">Nombre</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="apellido" class="col-sm-2 control-label">Apellido</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="edad" class="col-sm-2 control-label">Edad</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="edad" name="edad" placeholder="Edad">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="telefono" class="col-sm-2 control-label">Telefono</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Modificar paciente" class="btn btn-primary">
+    </div>
+  </div>
+</form>
+
+<form action="/paciente" method="POST" class="form-horizontal" id="buscarpaciente "name="buscarpaciente" onsubmit="enviarFormulario(event)">
+  <label for="id">Cedula</label>
+  <input type="text" name="id" id="id">
+  <input type="submit"  value="Buscar por cedula" class="btn btn-primary">
+
+</form>
+
+<script>
+  function enviarFormulario(event) {
+    event.preventDefault(); // Evitar el envío del formulario por defecto
+
+    const cedula = document.getElementsByName('id')[0].value;
+    const url = `/paciente/${encodeURIComponent(cedula)}`;
+
+    window.location.href = url; // Redirigir a la URL con el parámetro
+}
+</script>

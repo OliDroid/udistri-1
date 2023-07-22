@@ -1,31 +1,51 @@
-<form action="/citas" method="post" class="form-horizontal">
-    <div class="form-group">
-      <label for="id" class="col-sm-2 control-label">Id</label>
-      <div class="col-sm-10">
-        <input type="number" class="form-control" id="id" name="id" placeholder="Id">
-      </div>
+<form action="/cita" method="post" class="form-horizontal">
+  <div class="form-group">
+    <label for="id" class="col-sm-2 control-label">Id</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="id" name="id" placeholder="Id">
     </div>
-    <div class="form-group">
-      <label for="doctor_id" class="col-sm-2 control-label">Doctor Id</label>
-      <div class="col-sm-10">
-        <input type="number" class="form-control" id="doctor_id" name="doctor_id" placeholder="Doctor Id">
-      </div>
+  </div>
+  <div class="form-group">
+    <label for="doctor_id" class="col-sm-2 control-label">Doctor Id</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="doctor" name="doctor" placeholder="Doctor Id">
     </div>
-    <div class="form-group">
-      <label for="paciente_id" class="col-sm-2 control-label">Paciente Id</label>
-      <div class="col-sm-10">
-        <input type="number" class="form-control" id="paciente_id" name="paciente_id" placeholder="Paciente Id">
-      </div>
+  </div>
+  <div class="form-group">
+    <label for="paciente_id" class="col-sm-2 control-label">Paciente Id</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="paciente" name="paciente" placeholder="Paciente Id">
     </div>
-    <div class="form-group">
-      <label for="fecha" class="col-sm-2 control-label">Fecha</label>
-      <div class="col-sm-10">
-        <input type="date" class="form-control" id="fecha" name="fecha" placeholder="Fecha">
-      </div>
-      <form action="/cita/lista" method="get">
-        <input type="submit" class="btn btn-primary" value="ver">
-    </form>
+  </div>
+  <div class="form-group">
+    <label for="fecha" class="col-sm-2 control-label">Fecha</label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" id="fecha" name="fecha" placeholder="Fecha">
+    </div>
+    <br>
+    <input type="submit" class="submitformbutton" value="Crear cita">
+</form>
+<br>
 
-    <form action="/cita/lista" method="get">
-        <input type="submit" class="btn btn-primary" value="ver">
-    </form>
+<form action="/cita/lista" method="get">
+  <input type="submit" class="btn btn-primary" value="Lista de citas">
+</form>
+<br>
+
+<form action="/cita" method="POST" class="form-horizontal" id="buscarcita" name="buscarcita" onsubmit="enviarFormulario(event)">
+  <label for="id">id cita</label>
+  <input type="text" name="id" id="id">
+  <input type="submit"  value="Buscar por id" class="btn btn-primary">
+
+</form>
+
+<script>
+  function enviarFormulario(event) {
+    event.preventDefault(); // Evitar el envío del formulario por defecto
+
+    const icita = document.getElementsByName('buscarcita')[0].value;
+    const url = `/cita/${encodeURIComponent(icita)}`;
+
+    window.location.href = url; // Redirigir a la URL con el parámetro
+}
+</script>

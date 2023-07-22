@@ -26,13 +26,13 @@ rdoctor.post('/', async (req: Request, res: Response) => {
 			return res.status(500).json({ 'message': err.message });
 		}
 
-		res.status(200).send(`el doctor con cedula${req.body.cedula} ha sido creado`);
+		res.status(200).render("return.ejs", {cuerpo: "doc"});
 	});
 });
 
 rdoctor.get('/:id', async (req: Request, res: Response) => {
-	const doctorId = Number(req.params.id);
-	cdoctor.findOne(doctorId, (err: Error, doctor: Doctor) => {
+	const cedula = Number(req.params.id);
+	cdoctor.findOne(cedula, (err: Error, doctor: Doctor) => {
 		if (err) {
 			return res.status(500).json({ 'message': err.message });
 		}

@@ -31,8 +31,9 @@ rpaciente.post('/', async (req: Request, res: Response) => {
 });
 
 rpaciente.get('/:id', async (req: Request, res: Response) => {
-	const pacienteId = Number(req.params.id);
-	cpaciente.findOne(pacienteId, (err: Error, paciente: Paciente) => {
+	console.log(req.params.id)
+	const cedula = Number(req.params.id);
+	cpaciente.findOne(cedula, (err: Error, paciente: Paciente) => {
 		if (err) {
 			return res.status(500).json({ 'message': err.message });
 		}

@@ -1,3 +1,16 @@
+
+<form action="/doctor/lista" method="get">
+  <input type="submit" class="btn btn-primary" value="Lista de doctores">
+</form>
+<br>
+
+<form action="/doctor" method="POST" class="form-horizontal" id="buscardoctor" name="buscardoctor" onsubmit="enviarFormulario(event)">
+  <input type="text" name="id" id="id">
+  <input type="submit" value="Buscar por cedula" class="btn btn-primary">
+</form>
+<br>
+
+
 <form action="/doctor" method="post" class="form-horizontal">
     <div class="form-group">
       <label for="cedula" class="col-sm-2 control-label">Cedula</label>
@@ -44,11 +57,8 @@
     <input type="submit" class="submitformbutton" value="Crear doctor">
 </form>
 <br>
-<form action="/doctor/lista" method="get">
-    <input type="submit" class="btn btn-primary" value="Lista de doctores">
-</form>
-<br>
 
+<h2>Modificar doctor</h2>
 <form action="/doctor" method="put" class="form-horizontal">
   <div class="form-group">
     <label for="cedula" class="col-sm-2 control-label">Cedula</label>
@@ -96,10 +106,7 @@
 </form>
 <br>
 
-<form action="/doctor" method="POST" class="form-horizontal" id="buscardoctor" name="buscardoctor" onsubmit="enviarFormulario(event)">
-  <input type="text" name="id" id="id">
-  <input type="submit" value="Buscar por cedula" class="btn btn-primary">
-</form>
+
 
 <script>
   function enviarFormulario(event) {

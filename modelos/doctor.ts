@@ -1,3 +1,4 @@
+/*modelo doctor*/
 export interface Doctor{
     cedula: number,
     nombre: string,

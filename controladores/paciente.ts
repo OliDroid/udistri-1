@@ -1,8 +1,12 @@
+
+// Importación de módulos y paquetes
+
 import {db} from "../db";
 import { Paciente } from "../modelos/paciente";
 import { OkPacket, RowDataPacket } from 'mysql2';
 
 
+//Función para crear un nuevo paciente en la base de datos.
 export const crear = (paciente: Paciente, callback: Function) => {
 	const consulta = 'INSERT INTO paciente VALUES (?, ?, ?, ?, ?)';
 	db.query(consulta,
@@ -16,6 +20,8 @@ export const crear = (paciente: Paciente, callback: Function) => {
 	);
 };
 
+
+//Función para buscar y obtener la información de un paciente por su número de cédula.
 export const findOne = (cedula: number, callback: Function) => {
 
 	const consulta = `SELECT * FROM paciente WHERE id=?`;
@@ -35,6 +41,8 @@ export const findOne = (cedula: number, callback: Function) => {
 	});
 };
 
+
+//Función para obtener la lista completa de pacientes en la base de datos.
 export const findAll = (callback: Function) => {
 	const consulta = `SELECT * FROM paciente`;
 
@@ -59,6 +67,8 @@ export const findAll = (callback: Function) => {
 	});
 };
 
+
+//Función para actualizar la información de un paciente existente en la base de datos.
 export const update = (paciente: Paciente, callback: Function) => {
 	const consulta = 'UPDATE paciente SET nombre=?, apellido=?, edad=?, cel=?  WHERE id=?';
 

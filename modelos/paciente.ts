@@ -1,3 +1,4 @@
+/*modelo paciente*/
 export interface Paciente {
     cedula: number,
     nombre: string,

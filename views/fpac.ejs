@@ -1,3 +1,16 @@
+<form action="/paciente/lista" method="put">
+  <input type="submit" class="btn btn-primary" value="Lista de pacientes">
+</form>
+<br>
+
+<form action="/paciente" method="POST" class="form-horizontal" id="buscarpaciente "name="buscarpaciente" onsubmit="enviarFormulario(event)">
+  <label for="id">Cedula</label>
+  <input type="text" name="id" id="id">
+  <input type="submit"  value="Buscar por cedula" class="btn btn-primary">
+
+</form>
+<br>
+
 <h2>Registro de pacientes</h2><br>
 <form action="/paciente" method="post" class="form-horizontal">
   <div class="form-group">
@@ -38,11 +51,8 @@
 </form>
 <br>
 
-<form action="/paciente/lista" method="put">
-  <input type="submit" class="btn btn-primary" value="Lista de pacientes">
-</form>
-<br>
 
+<h2>Modificar Paciente</h2>
 <form action="/paciente" method="post" class="form-horizontal">
   <div class="form-group">
     <label for="cedula" class="col-sm-2 control-label">Cedula</label>
@@ -81,12 +91,7 @@
   </div>
 </form>
 
-<form action="/paciente" method="POST" class="form-horizontal" id="buscarpaciente "name="buscarpaciente" onsubmit="enviarFormulario(event)">
-  <label for="id">Cedula</label>
-  <input type="text" name="id" id="id">
-  <input type="submit"  value="Buscar por cedula" class="btn btn-primary">
 
-</form>
 
 <script>
   function enviarFormulario(event) {

@@ -1,9 +1,10 @@
+// Importación de módulos y paquetes
 import {db} from "../db";
 import { Cita } from "../modelos/cita";
 import { OkPacket, RowDataPacket } from 'mysql2';
 
 
-
+//Función para crear una nueva cita en la base de datos.
 export const crear = (cita: Cita, callback: Function) => {
 	const consulta = 'INSERT INTO cita (paciente, doctor, fecha) VALUES (?, ?, ?)';
 
@@ -18,6 +19,7 @@ export const crear = (cita: Cita, callback: Function) => {
 	);
 };
 
+//Función para buscar y obtener la información de una cita por el id.
 export const findOne = (id: number, callback: Function) => {
 
 	const consulta = `SELECT * FROM cita WHERE id=?`;
@@ -39,7 +41,7 @@ export const findOne = (id: number, callback: Function) => {
 		callback(null, citas);
 	});
 };
-
+//Función para obtener la lista completa de citas en la base de datos.
 export const findAll = (callback: Function) => {
 	const consulta = `SELECT * FROM cita`;
 
@@ -63,7 +65,7 @@ export const findAll = (callback: Function) => {
 	});
 };
 
-
+//Función para actualizar la información de una cita existente en la base de datos.
 export const update = (cita: Cita, callback: Function) => {
 	const consulta = `UPDATE cita (paciente, doctor, fecha) SET paciente=?, doctor=?, fecha=?,  WHERE id=?`;
 	db.query(

@@ -1,8 +1,9 @@
+// Importación de módulos y paquetes
 import {db} from "../db";
 import { Doctor } from "../modelos/doctor";
 import { OkPacket, RowDataPacket } from 'mysql2';
 
-
+//Función para crear un nuevo doctor en la base de datos.
 export const crear = (doctor: Doctor, callback: Function) => {
 	const consulta = 'INSERT INTO doctor VALUES (?, ?, ?, ?, ?, ?)';
 
@@ -17,6 +18,7 @@ export const crear = (doctor: Doctor, callback: Function) => {
 	);
 };
 
+//Función para buscar y obtener la información de un doctor por su número de cédula.
 export const findOne = (cedula: number, callback: Function) => {
 
 	const consulta = `
@@ -38,6 +40,7 @@ export const findOne = (cedula: number, callback: Function) => {
 	});
 };
 
+//Función para obtener la lista completa de doctores en la base de datos.
 export const findAll = (callback: Function) => {
 	const consulta = `SELECT * FROM doctor`;
 
@@ -62,7 +65,7 @@ export const findAll = (callback: Function) => {
 		callback(null, doctores);
 	});
 };
-
+//Función para actualizar la información de un doctor existente en la base de datos.
 export const update = (doctor: Doctor, callback: Function) => {
 	const consulta = 'UPDATE doctor SET nombre=?, apellido=?, especialidad=?, mail=?, consultorio=?  WHERE id=?';
 

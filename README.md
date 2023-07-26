@@ -51,11 +51,13 @@ Cita
 
 
 Apoyo visual:
+
 [POST] /paciente
+![crearpaciente](https://github.com/OliDroid/udistri-1/assets/113155421/47f178b2-5a36-4863-b572-77942c7acea9)
 
 [GET] /paciente/lista
-<img src="https://github.com/OliDroid/udistri-1/assets/113155421/a90f7fbe-5d14-4cd3-b896-76893bc70495" alt=”my banner”>
+![listapacientes](https://github.com/OliDroid/udistri-1/assets/113155421/cffbd2cd-6472-4d62-a6ae-e9bf1e097e4f)
 
 
 [GET] /paciente/:id: Muestra un paciente por cédula.
-https://github.com/OliDroid/udistri-1/assets/113155421/113ad1b2-a395-4e8e-8d00-2f5506966e5b
+![pacienteporid](https://github.com/OliDroid/udistri-1/assets/113155421/8e6ba28e-29fe-4551-b609-4d0d5637f815)

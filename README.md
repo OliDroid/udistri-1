@@ -27,3 +27,35 @@ La aplicación utiliza las siguientes tecnologías y paquetes:
    ```
 
 Antes de ejecutar el programa, asegúrate de crear una base de datos y configurar un archivo db con las credenciales correspondientes. Además, es necesario configurar las variables de entorno.
+
+
+Los endpoints de la aplicación son:
+Paciente
+
+[GET] /paciente: Muestra el index de pacientes.
+[POST] /paciente: Crea un nuevo paciente.
+[GET] /paciente/lista: Lista todos los pacientes.
+[GET] /paciente/:id: Muestra un paciente por cédula.
+Doctor
+
+[GET] /doctor: Muestra el index de doctores.
+[POST] /doctor: Crea un nuevo doctor.
+[GET] /doctor/lista: Lista todos los doctores.
+[GET] /doctor/:id: Muestra un doctor por cédula.
+Cita
+
+[GET] /cita: Muestra el index de citas.
+[POST] /cita: Crea una nueva cita.
+[GET] /cita/lista: Lista todas las citas.
+[GET] /cita/:id: Busca una cita por su identificador.
+
+
+Apoyo visual:
+[POST] /paciente
+
+[GET] /paciente/lista
+<img src="![listapacientes_cvt](https://github.com/OliDroid/udistri-1/assets/113155421/a90f7fbe-5d14-4cd3-b896-76893bc70495)" alt=”my banner”>
+
+
+[GET] /paciente/:id: Muestra un paciente por cédula.
+![pacienteporid_cvt](https://github.com/OliDroid/udistri-1/assets/113155421/113ad1b2-a395-4e8e-8d00-2f5506966e5b)

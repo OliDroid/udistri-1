@@ -59,5 +59,20 @@ Apoyo visual:
 ![listapacientes](https://github.com/OliDroid/udistri-1/assets/113155421/cffbd2cd-6472-4d62-a6ae-e9bf1e097e4f)
 
 
-[GET] /paciente/:id: Muestra un paciente por cédula.
+[GET] /paciente/:id
 ![pacienteporid](https://github.com/OliDroid/udistri-1/assets/113155421/8e6ba28e-29fe-4551-b609-4d0d5637f815)
+
+[POST] /doctor
+
+[GET] /doctor/lista
+![listadoctores_1](https://github.com/OliDroid/udistri-1/assets/113155421/faea1865-c467-4625-bce0-1d075a239a63)
+
+[GET] /doctor/:id
+![doctorporid](https://github.com/OliDroid/udistri-1/assets/113155421/00fb2126-bfb3-4df9-bde5-9937e4646bf3)
+
+[POST] /cita: Crea una nueva cita.
+
+[GET] /cita/lista: Lista todas las citas.
+![listacitas_1](https://github.com/OliDroid/udistri-1/assets/113155421/b92e2151-2f74-4d43-81c9-4bc6cf848261)
+
+[GET] /cita/:id: Busca una cita por su identificador.

@@ -54,8 +54,8 @@ Apoyo visual:
 [POST] /paciente
 
 [GET] /paciente/lista
-<img src="![listapacientes_cvt](https://github.com/OliDroid/udistri-1/assets/113155421/a90f7fbe-5d14-4cd3-b896-76893bc70495)" alt=”my banner”>
+<img src="https://github.com/OliDroid/udistri-1/assets/113155421/a90f7fbe-5d14-4cd3-b896-76893bc70495" alt=”my banner”>
 
 
 [GET] /paciente/:id: Muestra un paciente por cédula.
-![pacienteporid_cvt](https://github.com/OliDroid/udistri-1/assets/113155421/113ad1b2-a395-4e8e-8d00-2f5506966e5b)
+https://github.com/OliDroid/udistri-1/assets/113155421/113ad1b2-a395-4e8e-8d00-2f5506966e5b
